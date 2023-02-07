@@ -1,0 +1,67 @@
+({
+    calculatorOpenClose :function(component, event, helper) {
+        console.log('calculatorOpenClose çalıştı');
+        var iscalcOpen = component.get("v.isCalcOpen");
+        var buttonText = component.get("v.buttonText");
+        console.log(iscalcOpen);
+        console.log(buttonText);
+        component.set("v.isCalcOpen",!iscalcOpen);
+        console.log('---işlem sonrası-----');
+        if(iscalcOpen==false){
+            component.set("v.buttonText","HIDE");
+        }else{
+            component.set("v.buttonText","SHOW");
+        }
+        iscalcOpen=component.get("v.isCalcOpen");
+        console.log(iscalcOpen);
+        buttonText=component.get("v.buttonText");
+        console.log(buttonText);
+    },
+    doinit: function(component, event, helper) {
+        console.log('doinit çalıştı');
+    },
+    sum : function(component, event, helper) {
+        console.log('toplama işlemi tıklandı');
+        var x = component.get("v.xnumber");
+        var y = component.get("v.ynumber");
+        console.log(x);
+        console.log(y);
+        var resultvalue = Number(x)+Number(y);
+        console.log(resultvalue);
+        component.set("v.result",resultvalue);
+        component.set("v.prosess"," + ");
+    },
+    sub : function(component, event, helper) {
+        console.log('çıkartma işlemi tıklandı');
+        var x = component.get("v.xnumber");
+        var y = component.get("v.ynumber");
+        console.log(x);
+        console.log(y);
+        var resultvalue = Number(x)-Number(y);
+        console.log(resultvalue);
+        component.set("v.prosess"," - ");
+        component.set("v.result",resultvalue);
+    },
+    mul : function(component, event, helper) {
+        console.log('çarpma işlemi tıklandı');
+        var x = component.get("v.xnumber");
+        var y = component.get("v.ynumber");
+        console.log(x);
+        console.log(y);
+        var resultvalue = Number(x)*Number(y);
+        console.log(resultvalue);
+        component.set("v.result",resultvalue);
+        component.set("v.prosess"," * ");
+    },
+    div : function(component, event, helper) {
+        console.log('bölme işlemi tıklandı');
+        var x = component.get("v.xnumber");
+        var y = component.get("v.ynumber");
+        console.log(x);
+        console.log(y);
+        var resultvalue = Number(x)/Number(y);
+        console.log(resultvalue);
+        component.set("v.result",resultvalue);
+        component.set("v.prosess"," / ");
+    }
+})
