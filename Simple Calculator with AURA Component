@@ -24,6 +24,7 @@
     <lightning:button label="/" title="/" onclick="{! c.div }"/>   
             
         </aura:set>
+	
         <p class="slds-p-horizontal_small">
     <lightning:input type="number" name="xnumber" 
                      label="Enter the X value" value="{!v.xnumber}" 
@@ -34,5 +35,6 @@
         </p>
     </lightning:card>
 
-  </aura:if>    
+  </aura:if>  
+  
 </aura:component>
